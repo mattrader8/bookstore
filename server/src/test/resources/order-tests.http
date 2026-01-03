@@ -1,0 +1,1436 @@
+###
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection) or
+# paste cURL into the file and request will be converted to HTTP Request format.
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+
+### add order where name = mull
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": null,
+    "address": "123 Main St",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where name is an empty string
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "",
+    "address": "123 Main St",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where name is less than 4 characters
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Mat",
+    "address": "123 Main St",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where name is greater than 45 characters
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matttttttttttttttttttttttttttttttttttttttttttt",
+    "address": "123 Main St",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where name is valid
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main St",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where address = null
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": null,
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where address is an empty string
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where address is less than 4 characters
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where address is over than 45 characters
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "Matttttttttttttttttttttttttttttttttttttttttttt",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where address is valid
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where phone = null
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": null,
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where phone is an empty string
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where phone is != 10
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-866",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where phone is valid
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where email = null
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": null,
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where email is an empty string
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where email has spaces
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where email does not contain @
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt.gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where email contains . at the end
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "tom@",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 8,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where email is valid
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where credit card = null
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": null,
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where credit card is an empty string
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where credit card is less than 14 characters
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where credit card is greater than 16 characters
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 11111",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where credit card is valid
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where credit card expiration month = null
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": null,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where credit card expiration year = null
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": null
+  }
+}
+
+### add order where credit card expiration month is an empty string
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": "",
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where credit card expiration year is an empty string
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": ""
+  }
+}
+
+### add order where credit card expiration month and year are before the curret date
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 5,
+    "ccExpiryYear": 2020
+  }
+}
+
+### add order where credit card expiration month is before the curret date but expiration year is the current year
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 5,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where credit card expiration is valid (month is less than current month value but year is greater)
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 3,
+    "ccExpiryYear": 2022
+  }
+}
+
+### add order where credit card expiration is valid (month and year are both equal to current month and year)
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 8,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where cart contains zero items
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": []
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 8,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where cart item has quanity less than 1
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": -1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 8,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where cart item has quanity greater than 99
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 100
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 8,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where cart item price does not match database
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 2000,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 8,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where cart item category does not match database
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1004
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 8,
+    "ccExpiryYear": 2021
+  }
+}
+
+### add order where cart is valid
+
+POST http://localhost:8080/MattBookstoreTransact/api/orders
+Content-Type: application/json
+
+{
+  "cart":
+  {
+    "items": [
+      {
+        "book": {
+          "bookId": 1012,
+          "title": "Alice's Adventures in Wonderland",
+          "author": "Lewis Carroll",
+          "description": "",
+          "price": 1999,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1003
+        },
+        "quantity": 5
+      }
+    ]
+  },
+  "customerForm":
+  {
+    "name": "Matt",
+    "address": "123 Main Street",
+    "phone": "703-472-8665",
+    "email": "hargenrader.matt@gmail.com",
+    "ccNumber": "4444 3333 2222 1111",
+    "ccExpiryMonth": 8,
+    "ccExpiryYear": 2021
+  }
+}
